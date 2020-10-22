@@ -15,7 +15,7 @@ public:
 	virtual void fly() = 0;
 };
 
-class Dog : public Runner, Barker {
+class Dog : public Runner, public Barker {
 public:
 	
 	void run() override {
@@ -27,7 +27,7 @@ public:
 	}	
 };
 
-class Bird : public Flying, Runner {
+class Bird : public Flying, public Runner {
 	void fly() override {
 		std::cout << "Bird is flying";
 	}
