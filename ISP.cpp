@@ -1,17 +1,22 @@
 #include <iostream>
 
-class Animal {
+class Runner {
 public:
-	virtual void fly() = 0;
 	virtual void run() = 0;
+};
+
+class Barker {
+public:
 	virtual void bark() = 0;
 };
 
-class 
-
-class Dog : public Animal {
+class Flying {
 public:
-	void fly() override {}
+	virtual void fly() = 0;
+};
+
+class Dog : public Runner, Barker {
+public:
 	
 	void run() override {
 		std::cout << "Dog is running";
@@ -22,7 +27,7 @@ public:
 	}	
 };
 
-class Bird : public Animal {
+class Bird : public Flying, Runner {
 	void fly() override {
 		std::cout << "Bird is flying";
 	}
@@ -30,7 +35,5 @@ class Bird : public Animal {
 	void run() override {
 		std::cout << "Bird is running";
 	}
-
-	void bark() override {}
 };
 
